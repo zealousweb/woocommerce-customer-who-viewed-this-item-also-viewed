@@ -4,13 +4,11 @@ Contributors: zealopensource
 Tags: WooCommerce, E-Commerce, Recently Viewed Products
 Donate link: https://www.zealousweb.com/payment/
 Requires at least: 3.0.1
-Tested up to: 6.0
+Tested up to: 6.1.1
 License: GPLv3 or later License
-WC requires at least: 1.5 
-WC tested up to: 4.4.1
 Requires PHP: 7.0
-Stable tag : 2.4
-Version: 2.5
+Stable tag : 3.0
+Version: 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
@@ -69,6 +67,9 @@ Yes, this plugin supports product filtering based on current product category an
 1. Screenshot 'screenshot-02.png' shows front end view for this plugin.
 
 == Changelog ==
+
+= 3.0 =
+* Test - Make multisite compibility and update text domain. 
 
 = 2.5 =
 * Test - Checking with Latest wordPress and Contact form 7, Tested and works fine.

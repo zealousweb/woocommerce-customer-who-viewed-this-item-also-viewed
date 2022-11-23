@@ -11,13 +11,7 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
-register_activation_hook (WCCWVZW_FILE, 'wccwvzw_activation_check');
-function wccwvzw_activation_check()
-{		
-		if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				wp_die( __( '<b>Warning</b> : Install/Activate Woocommerce to activate "WooCommerce - Customer Who Viewed This Item Also Viewed" plugin', WCCWVZW_TEXT_DOMAIN ) );
-		}
-}
+
 /**
  * Track product views.
  */
@@ -27,23 +21,23 @@ function wccwvzw_custom_track_product_view() {
 		return;
 	}
 
-		global $post;
+	global $post;
 
-		if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) )
-				$viewed_products = array();
-		else
-				$viewed_products = (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) );
+	if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) )
+		$viewed_products = array();
+	else
+		$viewed_products = (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) );
 
-		if ( ! in_array( $post->ID, $viewed_products ) ) {
-				$viewed_products[] = $post->ID;
-		}
+	if ( ! in_array( $post->ID, $viewed_products ) ) {
+		$viewed_products[] = $post->ID;
+	}
 
-		if ( sizeof( $viewed_products ) > 15 ) {
-				array_shift( $viewed_products );
-		}
+	if ( sizeof( $viewed_products ) > 15 ) {
+		array_shift( $viewed_products );
+	}
 
-		// Store for session only
-		wc_setcookie( 'woocommerce_recently_viewed', implode( '|', $viewed_products ) );
+	// Store for session only
+	wc_setcookie( 'woocommerce_recently_viewed', implode( '|', $viewed_products ) );
 }
  /**
 * Add related products to options
@@ -53,34 +47,27 @@ function wccwvzw_customer_who_viewed_relation_product_options_woocommerce()
 {
 	// Get WooCommerce Global
 	global $woocommerce;
+	global $post;
 
-		global $post;
+	$customer_also_viewed = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) ) : array();
 
-		$customer_also_viewed = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) ) : array();
+	if(($key = array_search($post->ID, $customer_also_viewed)) !== false) { unset($customer_also_viewed[$key] ); }
 
-		if(($key = array_search($post->ID, $customer_also_viewed)) !== false) { unset($customer_also_viewed[$key] ); }
-
-		if(!empty($customer_also_viewed))
-		{
-				foreach($customer_also_viewed as $viewed)
+	if(!empty($customer_also_viewed))
+	{
+			foreach($customer_also_viewed as $viewed)
+			{
+				$option = 'customer_also_viewed_'.$viewed;
+				$option_value = get_option($option);
+				$option_value = explode(',', $option_value);
+				if(!in_array($post->ID,$option_value))
 				{
-						$option = 'customer_also_viewed_'.$viewed;
-						$option_value = get_option($option);
-						//echo "stringcheck"; 
-						//print_r($option_value);
-
-						//if(isset($option_value) && !empty($option_value))
-						//{
-								$option_value = explode(',', $option_value);
-								if(!in_array($post->ID,$option_value))
-								{
-										$option_value[] = $post->ID;
-								}
+					$option_value[] = $post->ID;
+				}
 				$option_value = (count($option_value) > 1) ? implode(',', $option_value) : $post->ID;
 				update_option($option, $option_value);
-						//}
-				}
-		}
+			}
+	}
 }
 /**
  *
@@ -129,17 +116,17 @@ function wccwvzw_customer_who_viewed_also_viewed_this_item_woocommerce( $atts, $
 			'post__in'       => $customer_also_viewed
 		);
 
-	$query_args['orderby'] = ($product_order == '') ? 'ID(ID, explode('.implode(",",$customer_also_viewed).'))' : $product_order;
+		$query_args['orderby'] = ($product_order == '') ? 'ID(ID, explode('.implode(",",$customer_also_viewed).'))' : $product_order;
 
-	//Executes if category filter applied on product page
-	if($category_filter == 1 && !empty($categories)) {
-	$category_slug = '';
-	foreach ($categories as $category) {
-		if($category->parent == 0){
-				$category_slug = $category->slug;
+		//Executes if category filter applied on product page
+		if($category_filter == 1 && !empty($categories)) {
+		$category_slug = '';
+		foreach ($categories as $category) {
+			if($category->parent == 0){
+					$category_slug = $category->slug;
+			}
 		}
-	}
-	if($category_slug != '') {
+		if($category_slug != '') {
 			$query_args['product_cat'] = $category_slug;
 		}
 	}
