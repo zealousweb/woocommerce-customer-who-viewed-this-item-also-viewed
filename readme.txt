@@ -29,6 +29,18 @@ The important point is that it only shows those products which were mostly viewe
 PHP version : 5.3 and latest
 WordPress   : Wordpress 3.0 and latest
 
+== OUR OTHER PLUGINS ==
+
+* <strong>[Accept PayPal Payments Using Contact Form 7 Pro](https://www.zealousweb.com/store/accept-paypal-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Stripe Payments Using Contact Form 7 Pro](https://www.zealousweb.com/store/accept-stripe-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Authorize.NET Payments Using Contact Form 7 Pro](https://www.zealousweb.com/store/accept-authorize-net-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Elavon Payments Using Contact Form 7 Pro](https://www.zealousweb.com/store/accept-elavon-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept 2Checkout Payments Using Contact Form 7 Pro](https://www.zealousweb.com/store/accept-2checkout-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept SagePay(opayo) Payments Using Contact Form 7 Pro](https://www.zealousweb.com/store/accept-sage-pay-payments-using-contact-form-7-pro)</strong>
+* <strong>[User Registration Using Contact Form 7 Pro](https://www.zealousweb.com/store/user-registration-using-contact-form-7-pro)</strong>
+* <strong>[Abandoned Contact Form 7 Pro](https://www.zealousweb.com/store/abandoned-contact-form-7-pro/)</strong>
+* <strong>[Custom Product Options WooCommerce Pro](https://www.zealousweb.com/store/custom-product-options-woocommerce-pro)</strong>
+
 == Installation Process ==
 1. Install "Customer Who Viewed This Item Also Viewed Using Woocommerce" either via the WordPress.org plugin directory, or by uploading the files to your server
 2. Activate the plugin in your Wordpress Admin and go to the admin panel Setting -> WooCommerce -> Customer Also Viewed Settings.
@@ -69,7 +81,7 @@ Yes, this plugin supports product filtering based on current product category an
 == Changelog ==
 
 = 3.0 =
-* Test - Make multisite compibility and update text domain. 
+* Test - Make multisite compibility and update text domain.
 
 = 2.5 =
 * Test - Checking with Latest wordPress and Contact form 7, Tested and works fine.
@@ -94,7 +106,7 @@ Yes, this plugin supports product filtering based on current product category an
 
 = 2.0 =
 * Change - Allow Products viewed by multiple users at different browsers
-* Change - Removed use of shortcode 
+* Change - Removed use of shortcode
 * Change - Loads on single product page like other blocks of WooCommerce
 
 = 1.0 =
