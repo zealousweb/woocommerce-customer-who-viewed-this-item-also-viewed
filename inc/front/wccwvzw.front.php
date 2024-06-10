@@ -26,7 +26,7 @@ function wccwvzw_custom_track_product_view() {
 	if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) )
 		$viewed_products = array();
 	else
-		$viewed_products = (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) );
+		$viewed_products = (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) ); //phpcs:ignore
 
 	if ( ! in_array( $post->ID, $viewed_products ) ) {
 		$viewed_products[] = $post->ID;
@@ -49,7 +49,7 @@ function wccwvzw_customer_who_viewed_relation_product_options_woocommerce()
 	global $woocommerce;
 	global $post;
 
-	$customer_also_viewed = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) ) : array();
+	$customer_also_viewed = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', wp_unslash($_COOKIE['woocommerce_recently_viewed']) ) : array();  //phpcs:ignore
 
 	if(($key = array_search($post->ID, $customer_also_viewed)) !== false) { unset($customer_also_viewed[$key] ); }
 
@@ -147,7 +147,7 @@ function wccwvzw_customer_who_viewed_also_viewed_this_item_woocommerce( $atts, $
 	}
 	else { //Displays title ?>
 		<section class="related products customer_also_viewed_wrapper">
-			<h2><?php _e( $plugin_title, 'woocommerce' ) ?></h2>
+			<h2><?php esc_html_e( $plugin_title, 'woocommerce' ) ?></h2>
 				<?php // Start the loop
 				$count = 1;
 				woocommerce_product_loop_start();
