@@ -23,7 +23,7 @@ function wccwvzw_add_action_links ( $links ) {
 register_activation_hook (WCCWVZW_FILE, 'wccwvzw_activation_check');
 function wccwvzw_activation_check() {
 	if( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-		wp_die( __( '<b>Warning</b> : Install/Activate Woocommerce to activate "WooCommerce - Customer Who Viewed This Item Also Viewed" plugin', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ) );
+		wp_die( esc_html__( '<b>Warning</b> : Install/Activate Woocommerce to activate "WooCommerce - Customer Who Viewed This Item Also Viewed" plugin', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ) );
 	}
 }
 /**
@@ -39,49 +39,50 @@ function wccwvzw_customer_also_viewed_setup_menu(){
  */
 function wccwvzw_customer_also_viewed_init(){
 ?>
-	<h1><?php echo _e( 'Customer Who Viewed This Item Also Viewed Using Woocommerce', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></h1>
+	<h1><?php echo esc_html_e( 'Customer Who Viewed This Item Also Viewed Using Woocommerce', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></h1>
 	<form method="post" action="options.php">
 		<?php settings_fields( 'customer-also-viewed-settings' ); ?>
 		<?php do_settings_sections( 'customer-also-viewed-settings' ); ?>
 		<table class="form-table">
 				<tr valign="top">
-						<th scope="row"><?php echo _e( 'Title to be displayed', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
-						<td><input type="text" name="customer_who_viewed_title" value="<?php echo get_option( 'customer_who_viewed_title' ); ?>"/></td>
+						<th scope="row"><?php echo esc_html_e( 'Title to be displayed', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<td><input type="text" name="customer_who_viewed_title" value="<?php echo esc_attr(get_option( 'customer_who_viewed_title' )); ?>"maxlength="100"/></td>
+						Note: you can wright 100 words displayed Title 
 				</tr>
 				<tr valign="top">
-						<th scope="row"><?php echo _e( 'Number of items to be displayed', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
-						<td><input type="text" name="total_items_display" value="<?php echo get_option( 'total_items_display' ); ?>"/>&nbsp;&nbsp;&nbsp;<?php echo _e( 'NOTE: You cannot display items more than 10', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></td>
+						<th scope="row"><?php echo esc_html_e( 'Number of items to be displayed', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<td><input type="text" name="total_items_display" value="<?php echo esc_attr(get_option( 'total_items_display' )); ?>"/>&nbsp;&nbsp;&nbsp;<?php echo esc_html_e( 'NOTE: You cannot display items more than 10', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></td>
 			 </tr>
 				<tr valign="top">
-						<th scope="row"><?php echo _e( 'Add category filter', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<th scope="row"><?php echo esc_html_e( 'Add category filter', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
 						<td>
 								<input type="checkbox" name="category_filter" value="1" <?php echo (get_option( 'category_filter' ) == 1) ? 'checked': '';?>/>
 						</td>
 				</tr>
 				<tr valign="top">
-						<th scope="row"><?php echo _e( 'Show product image', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<th scope="row"><?php echo esc_html_e( 'Show product image(required)', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
 						<td>
-								<input type="checkbox" name="show_image_filter" value="1" <?php echo (get_option( 'show_image_filter' ) == 1) ? 'checked': '';?>/>
+								<input type="checkbox" name="show_image_filter" value="1" <?php echo (get_option( 'show_image_filter' ) == 1) ? 'checked': '';?> required/>
 						</td>
 				</tr>
 				<tr valign="top">
-						<th scope="row"><?php echo _e( 'Show product price', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<th scope="row"><?php echo esc_html_e( 'Show product price(required)', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
 						<td>
-								<input type="checkbox" name="show_price_filter" value="1" <?php echo (get_option( 'show_price_filter' ) == 1) ? 'checked': '';?>/>
+								<input type="checkbox" name="show_price_filter" value="1" <?php echo (get_option( 'show_price_filter' ) == 1) ? 'checked': '';?> required/>
 						</td>
 				</tr>
 				 <tr valign="top">
-						<th scope="row"><?php echo _e( 'Show add to cart button', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<th scope="row"><?php echo esc_html_e( 'Show add to cart button', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
 						<td>
 								<input type="checkbox" name="show_addtocart_filter" value="1" <?php echo (get_option( 'show_addtocart_filter' ) == 1) ? 'checked': '';?>/>
 						</td>
 				</tr>
 				<tr valign="top">
-						<th scope="row"><?php echo _e( 'Order by', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
+						<th scope="row"><?php echo esc_html_e( 'Order by', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></th>
 						<td>
 								<select name = "product_order">
-										<option value="" ><?php echo _e( 'Recent', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></option>
-										<option value="rand" <?php echo (get_option( 'product_order' ) == 'rand') ? 'selected': '';?>><?php echo _e( 'Random', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ).':'; ?></option>
+										<option value="" ><?php echo esc_html_e( 'Recent', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></option>
+										<option value="rand" <?php echo (get_option( 'product_order' ) == 'rand') ? 'selected': '';?>><?php echo esc_html_e( 'Random', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></option>
 								</select>
 						</td>
 				</tr>
@@ -103,7 +104,7 @@ function wccwvzw_validate_number_of_items(){
 				this.value = val > 10 ? 3 : val;
 			});
 	</script>";
-	echo $script;
+	echo $script; //phpcs:ignore
 }
 
 /**
