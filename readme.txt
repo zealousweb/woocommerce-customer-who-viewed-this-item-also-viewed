@@ -7,8 +7,8 @@ Requires at least: 3.0.1
 Tested up to: 6.5
 License: GPLv3 or later License
 Requires PHP: 7.0
-Stable tag : 3.0
-Version: 3.0
+Stable tag : 3.1
+Version: 3.1
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
@@ -67,6 +67,9 @@ Yes, this plugin supports product filtering based on current product category an
 1. Screenshot 'screenshot-02.png' shows front end view for this plugin.
 
 == Changelog ==
+
+= 3.1 =
+* Improved compatibility with WordPress VIP platform by refactoring code to adhere to VIP coding standards. 
 
 = 3.0 =
 * Test - Make multisite compibility and update text domain. 
