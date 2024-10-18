@@ -12,6 +12,7 @@ Compatibility of WordPress VIP.
 **Plugin Requirement**
 
 PHP version : 5.3 and latest
+
 WordPress : WordPress 3.0 and latest
 
 # Installation
