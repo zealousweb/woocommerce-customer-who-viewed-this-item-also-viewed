@@ -10,6 +10,7 @@ The important point is that it only shows those products which were mostly viewe
 Compatibility of WordPress VIP.
 
 **Plugin Requirement**
+
 PHP version : 5.3 and latest
 WordPress : WordPress 3.0 and latest
 
