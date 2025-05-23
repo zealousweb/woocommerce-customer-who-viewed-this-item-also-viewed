@@ -3,7 +3,7 @@
  * Plugin Name: Customer Who Viewed This Item Also Viewed Using Woocommerce
  * Plugin URL: http://wordpress.org/plugins/woocommerce-customer-also-viewed-this-item
  * Description:  This plugin will suggest your site visitors with products which were mostly explored by other customers.
- * Version: 3.2
+ * Version: 3.3
  * Author: ZealousWeb
  * Author URI: https://zealousweb.com
  * Developer: The Zealousweb Team
@@ -17,7 +17,7 @@
  */
 /**
  * @access      public
- * @since       1.0
+ * @since       3.3
  * @return      $content
 */
 

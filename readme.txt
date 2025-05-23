@@ -4,11 +4,11 @@ Contributors: zealopensource
 Tags: WooCommerce, E-Commerce, Recently Viewed Products
 Donate link: https://www.zealousweb.com/payment/
 Requires at least: 3.0.1
-Tested up to: 6.6
+Tested up to: 6.8
 License: GPLv3 or later License
 Requires PHP: 7.0
-Stable tag : 3.2
-Version: 3.2
+Stable tag : 3.3
+Version: 3.3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
@@ -25,6 +25,24 @@ Suppose you have product A and out of 60 visitors who viewed this product, 20 vi
 The important point is that it only shows those products which were mostly viewed and the most viewed comes in the first place. This ensures efficient performance and criteria of suggested products on your site because most of the customers consider only top visited or reviewed products.
 
 Compatibility of WordPress VIP.
+
+<strong>[Demo for Customer who viewed this item also viewed using Woocommerce](https://demo.zealousweb.com/wordpress-plugins/customer-who-viewed-this-item-also-viewed-using-woocommerce/)</strong>
+
+
+== OUR OTHER PLUGINS ==
+
+* <strong>[Abandoned Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/abandoned-contact-form-7-pro)</strong>
+* <strong>[Accept 2 Checkout Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Authorize.NET Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-authorize-net-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Elavon Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-elavon-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept PayPal Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-paypal-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Sagepay(Opayo) Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-sage-pay-opayo-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Stripe Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-stripe-payments-using-contact-form-7-pro)</strong>
+* <strong>[Custom Product Options WooCommerce Pro](https://store.zealousweb.com/wordpress-plugins/custom-product-options-woocommerce-pro)</strong>
+* <strong>[Generate PDF Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/generate-pdf-using-contact-form-7-pro)</strong>
+* <strong>[Smart Appointment & Booking Pro](https://store.zealousweb.com/wordpress-plugins/smart-appointment-booking-pro)</strong>
+* <strong>[Smart Showcase for Google Reviews Pro](https://store.zealousweb.com/wordpress-plugins/smart-showcase-for-google-reviews-pro)</strong>
+* <strong>[User Registration Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/user-registration-using-contact-form-7-pro)</strong>
 
 == Plugin Requirement ==
 
@@ -70,6 +88,9 @@ Yes, this plugin supports product filtering based on current product category an
 
 == Changelog ==
 
+= 3.3 =
+* Minor changes - Doc update
+
 = 3.2 =
 * Minor adjustments regarding the workflow
 
@@ -110,5 +131,43 @@ Initial Release
 
 == Upgrade Notice ==
 
+= 3.3 =
+* Minor changes - Doc update
+
+= 3.2 =
+* Minor adjustments regarding the workflow
+
+= 3.1 =
+* Improved compatibility with WordPress VIP platform by refactoring code to adhere to VIP coding standards. 
+
+= 3.0 =
+* Test - Make multisite compibility and update text domain. 
+
+= 2.5 =
+* Test - Checking with Latest wordPress and Contact form 7, Tested and works fine.
+
+= 2.4 =
+* Change - Change Payment Donation URL
+* Change - Update Plugin Author Name
+* Fix - Fixed some HTML struture of Viewed Items on Product Detail Page
+
+= 2.3 =
+* fix - compatibility fix with wordpress and wooCommerce latest versions
+* fix - fixed the data validation
+* Change - Plugin strcuture to improved the security
+* Change - Plugin Name and banner changes
+
+
 = 2.2 =
-2.2 is a major update. Make a full site backup with theme and extensions before upgrading.
+* fix - Compatibility fix with WooCommerce 3.6.5
+
+= 2.1 =
+* Change - Compatibility fix with WooCommerce 2.3.11
+
+= 2.0 =
+* Change - Allow Products viewed by multiple users at different browsers
+* Change - Removed use of shortcode 
+* Change - Loads on single product page like other blocks of WooCommerce
+
+= 1.0 =
+Initial Release
