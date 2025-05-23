@@ -131,5 +131,43 @@ Initial Release
 
 == Upgrade Notice ==
 
+= 3.3 =
+* Minor changes - Doc update
+
+= 3.2 =
+* Minor adjustments regarding the workflow
+
+= 3.1 =
+* Improved compatibility with WordPress VIP platform by refactoring code to adhere to VIP coding standards. 
+
+= 3.0 =
+* Test - Make multisite compibility and update text domain. 
+
+= 2.5 =
+* Test - Checking with Latest wordPress and Contact form 7, Tested and works fine.
+
+= 2.4 =
+* Change - Change Payment Donation URL
+* Change - Update Plugin Author Name
+* Fix - Fixed some HTML struture of Viewed Items on Product Detail Page
+
+= 2.3 =
+* fix - compatibility fix with wordpress and wooCommerce latest versions
+* fix - fixed the data validation
+* Change - Plugin strcuture to improved the security
+* Change - Plugin Name and banner changes
+
+
 = 2.2 =
-2.2 is a major update. Make a full site backup with theme and extensions before upgrading.
+* fix - Compatibility fix with WooCommerce 3.6.5
+
+= 2.1 =
+* Change - Compatibility fix with WooCommerce 2.3.11
+
+= 2.0 =
+* Change - Allow Products viewed by multiple users at different browsers
+* Change - Removed use of shortcode 
+* Change - Loads on single product page like other blocks of WooCommerce
+
+= 1.0 =
+Initial Release
