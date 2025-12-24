@@ -133,6 +133,9 @@ Initial Release
 
 == Upgrade Notice ==
 
+= 3.4 =
+* Tested with the latest version of WordPress (6.9).
+
 = 3.3 =
 * Minor changes - Doc update
 
