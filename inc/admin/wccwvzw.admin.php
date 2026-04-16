@@ -9,6 +9,17 @@
  */
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
+
+
+/**
+ * enqueue script and style for plugin
+ */
+add_action( 'admin_enqueue_scripts', 'admin_wccwvzw_embedvideos_scripts',999 );
+function admin_wccwvzw_embedvideos_scripts() {
+	wp_enqueue_style( WCCWVZW_PREFIX . '-style-admin', WCCWVZW_URL .'assets/css/admin.css' );
+}
+
+
 /**
  * Handles admin functionality
  */
@@ -39,7 +50,14 @@ function wccwvzw_customer_also_viewed_setup_menu(){
  */
 function wccwvzw_customer_also_viewed_init(){
 ?>
-	<h1><?php echo esc_html_e( 'Customer Who Viewed This Item Also Viewed Using Woocommerce', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?></h1>
+	<div class="wccwvzw-help-card">
+		<h1><?php echo esc_html__( 'Customer Who Viewed This Item Also Viewed Using Woocommerce', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' );?></h1>
+		<div class="wccwvzw-help-card-footer">
+			<a class="wccwvzw-primary-btn" href="https://support.zealousweb.com/portal/en/home" target="_blank" rel="noopener noreferrer">
+				<?php esc_html_e( 'Open Support Ticket', 'customer-who-viewed-this-item-also-viewed-using-woocommerce' ); ?>
+			</a>
+		</div>
+	</div>
 	<form method="post" action="options.php">
 		<?php settings_fields( 'customer-also-viewed-settings' ); ?>
 		<?php do_settings_sections( 'customer-also-viewed-settings' ); ?>

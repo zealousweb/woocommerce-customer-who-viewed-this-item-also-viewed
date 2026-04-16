@@ -49,6 +49,10 @@ if ( !defined( 'WCCWVZW_PREFIX' ) ) {
 	define( 'WCCWVZW_PREFIX', 'wccwvzw' ); // Plugin prefix
 }
 
+if ( !defined( 'WCCWVZW_URL' ) ) {
+	define( 'WCCWVZW_URL', plugin_dir_url( __FILE__ ) ); // Plugin url
+}
+
 /**
  * include admin and front file
  *
